@@ -1,0 +1,57 @@
+{
+  "name": "@glacient.tech/cli",
+  "version": "0.1.1",
+  "description": "Command-line interface for glacient services — manage workflows and capabilities from the terminal.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "glacient": "dist/glacient.js"
+  },
+  "files": [
+    "dist",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glacient/glacient-cli.git"
+  },
+  "homepage": "https://github.com/glacient/glacient-cli#readme",
+  "bugs": {
+    "url": "https://github.com/glacient/glacient-cli/issues"
+  },
+  "keywords": [
+    "cli",
+    "glacient",
+    "workflow"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build src/main.ts --target=node --outfile=dist/glacient.js",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "bun test ./src/",
+    "dev": "bun src/main.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "@types/tar": "^7.0.87",
+    "@typescript-eslint/parser": "^8.59.3",
+    "ajv": "^8.0.0",
+    "ajv-formats": "^3.0.0",
+    "commander": "^12.0.0",
+    "eslint": "^10.3.0",
+    "jwt-decode": "^4.0.0",
+    "msw": "^2.14.6",
+    "open": "^10.0.0",
+    "tar": "^7.5.15",
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.59.3"
+  }
+}
